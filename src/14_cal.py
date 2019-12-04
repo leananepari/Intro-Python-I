@@ -22,3 +22,29 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+from datetime import date
+
+
+def print_calendar(m, y):
+  d = date.today()
+  cal = calendar.TextCalendar(calendar.SUNDAY)
+  output = None
+
+  print("month", month)
+  print("year", year)
+  if not m and not y:
+    output = cal.formatmonth(d.year, d.month)
+    print(output)
+  if m and not y:
+    output = cal.formatmonth(d.year, int(m))
+    print(output)
+  if m and y:
+    output = cal.formatmonth(int(y), int(m))
+    print(output)
+
+
+
+month = input("Month: ")
+year = input("Year: ")
+
+print_calendar(month, year)
